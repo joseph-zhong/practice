@@ -3,6 +3,9 @@
 merge_two_binary_trees.py
 ---
 
+Leetcode: Easy
+https://leetcode.com/problems/merge-two-binary-trees/description/
+
 """
 # Definition for a binary tree node.
 # class TreeNode(object):
