@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+1.2: Check Permutation
+"""
 
 def containsPermutation(s1, s2):
     """ Returns whether `s2` contains a substring that is a permutation of `s1`.

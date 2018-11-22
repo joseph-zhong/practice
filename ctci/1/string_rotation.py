@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" 1.9 String Rotation """
 
 def isSubstring(s1, s2):
     """ Checks if `s1` is a substring of `s2`. """

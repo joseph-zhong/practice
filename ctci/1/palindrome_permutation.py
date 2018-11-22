@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" 1.4 Palindrome Permutation """
 
 def isPermutationOfPalindrome(s1):
     """ Returns whether the string can be composed as a palindrome.
