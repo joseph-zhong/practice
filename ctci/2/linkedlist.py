@@ -36,7 +36,7 @@ class LinkedList():
         slow = root
         fast = root.next
         if fast.next is None:
-          return slow
+            return slow
         while fast is not None:
             slow = slow.next
             fast = fast.next
