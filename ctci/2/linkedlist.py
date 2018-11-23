@@ -73,8 +73,6 @@ class LinkedList():
         head = LinkedList.merge(left, right)
         return head
 
-
-
 if __name__ == '__main__':
     a = LinkedList(vals=[11, 12, 12, 11, 11])
     LinkedList.print(a)
