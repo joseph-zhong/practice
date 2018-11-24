@@ -1,10 +1,29 @@
 #!/usr/bin/env python3
 
 class Node:
-    def __init__(self, val=None, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+    def __init__(self, val=None, left=None, right=None, vals=[]):
+        if len(vals) > 0:
+            root = Node.constructMinBst(vals)
+            self.val = root.val
+            self.left = root.left
+            self.right = root.right
+        else:
+            self.val = val
+            self.left = left
+            self.right = right
+
+    @staticmethod
+    def constructMinBst(vals):
+        def recurse(i, j):
+            if j - i == 0:
+                return None
+
+            mid = j // 2 + i // 2
+            root = Node(val=vals[mid])
+            root.left = recurse(i, mid)
+            root.right = recurse(mid+1, j)
+            return root
+        return recurse(0, len(vals))
 
     @staticmethod
     def print(root):
@@ -27,12 +46,12 @@ class Node:
                 stack.append(curr)
                 curr = curr.left
             if len(stack) > 0:
-                print(',', end='')
+                print(', ', end='')
             else:
                 print('', end='')
         print("]")
 
 if __name__ == '__main__':
-    Node.print(Node(val=2, left=Node(val=1), right=Node(val=3)))
-    Node.print(Node(val=2, left=Node(val=1), right=Node(val=3, right=Node(val=4))))
+    Node.print(Node(vals=[1,2,3]))
+    Node.print(Node(vals=[1,2,3,4]))
 
