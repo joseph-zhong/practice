@@ -20,14 +20,19 @@ class Node:
         print("[", end='')
         while len(stack) > 0:
             s = stack.pop()
-            print(s.val, end=',')
+            print(s.val, end='')
 
             curr = s.right
             while curr is not None:
                 stack.append(curr)
                 curr = curr.left
+            if len(stack) > 0:
+                print(',', end='')
+            else:
+                print('', end='')
         print("]")
 
 if __name__ == '__main__':
     Node.print(Node(val=2, left=Node(val=1), right=Node(val=3)))
+    Node.print(Node(val=2, left=Node(val=1), right=Node(val=3, right=Node(val=4))))
 
