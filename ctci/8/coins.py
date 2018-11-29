@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-""" 8.11 Coins """
+""" 8.11 Coins
+https://leetcode.com/problems/coin-change/
+"""
 
 count = 0
 def coins(n):
@@ -64,4 +66,22 @@ def coins2(coins, n):
 
 
 print(coins2([1,2,5], 11) == 3)
+
+def coinChange(self, coins, amount):
+    """
+    :type coins: List[int]
+    :type amount: int
+    :rtype: int
+    """
+
+    opt = [float('inf') for _ in range(amount+1)]
+    opt[0] = 0
+    for amt in range(1, amount+1):
+        for coin in coins:
+            if coin <= amt:
+                opt[amt] = min(opt[amt], opt[amt-coin] + 1)
+
+    if opt[amount] == float('inf'):
+        return -1
+    return opt[amount]
 
